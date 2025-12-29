@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: ydg_postgres
+    environment:
+      POSTGRES_DB: ydg_clinic
+      POSTGRES_USER: ydg_user
+      POSTGRES_PASSWORD: ydg_pass
+    ports:
+      - "5433:5432"
+    volumes:
+      - ydg_pg_data:/var/lib/postgresql/data
+
+volumes:
+  ydg_pg_data:
